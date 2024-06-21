@@ -21,10 +21,10 @@ module "app" {
   # Assumes 8 bits to be added to the CIDR range for the VPC
   public_subnets = [for subnet in range(var.vpc_public_subnet_count) : cidrsubnet(var.vpc_cidr_block, 8, subnet)]
 
-  enable_nat_gateway = false
-  enable_vpn_gateway = false
+  enable_nat_gateway      = false
+  enable_vpn_gateway      = false
   map_public_ip_on_launch = var.map_public_ip_on_launch
-  enable_dns_hostnames = var.enable_dns_hostnames
+  enable_dns_hostnames    = var.enable_dns_hostnames
 
   tags = merge(local.common_tags, {
     Name = "${local.naming_prefix}-vpc"
