@@ -64,3 +64,6 @@ resource "aws_s3_object" "graphic" {
   tags = local.common_tags
 
 }
+
+# doesn't match the videos - missing aws_iam_role & aws_iam_role_policy
+# (which apparently aren't needed but aren't consistent with video?)
